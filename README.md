@@ -1,2 +1,3 @@
-# fswb-torres
-Programming examples for the Full Stack Web Development: Round One - Begin! book
+# fswb
+
+Programming examples for _Full Stack Web Development: Round One - Begin!_
