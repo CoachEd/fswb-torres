@@ -1,0 +1,53 @@
+<!-- filename: shirt.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Shirt</title>
+</head>
+<body>
+<h4>Select your shirt size</h4>
+
+<input type="radio" id="s1" name="size" value="S">
+<label for="s1">Small</label><br>
+
+<input type="radio" id="s2" name="size" value="M">
+<label for="s2">Medium</label><br>
+
+<input type="radio" id="s3" name="size" value="L">
+<label for="s3">Large</label><br>
+
+<input type="radio" id="s4" name="size" value="XL">
+<label for="s4">Extra Large</label><br><br>
+
+<button id="sbmt" type="button">Submit</button><br><br>
+<div id="choices"></div>
+
+<script>
+var btn = document.getElementById("sbmt");
+var s1 = document.getElementById("s1");
+var s2 = document.getElementById("s2");
+var s3 = document.getElementById("s3");
+var s4 = document.getElementById("s4");
+var chc = document.getElementById("choices");
+
+btn.onclick = function() {
+  var s = 'You chose size: ';
+
+  if (s1.checked) {
+    s += s1.value;
+  } else if (s2.checked) {
+    s += s2.value;
+  } else if (s3.checked) {
+    s += s3.value;
+  } else if (s4.checked) {
+    s += s4.value;
+  } else {
+    s = "Please make a selection.";
+  }
+
+  chc.innerHTML = s;
+};
+</script>
+
+</body>
+</html>

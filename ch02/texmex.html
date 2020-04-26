@@ -1,0 +1,36 @@
+<!-- filename: texmex.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Tex Mex</title>
+</head>
+<body>
+<h3>Welcome to Tex Mex!</h3>
+
+<label for="meals">Meal type:</label>
+<select id="meals">
+  <option value="burrito">Burrito</option>
+  <option value="bowl">Burrito Bowl</option>
+  <option value="tacos">Tacos</option>
+  <option value="salad">Salad</option>
+  <option value="healthy">Healthier Option</option>
+</select>
+
+<br><br>
+<button id="sbmt" type="button">Submit</button><br><br>
+<div id="choices"></div>
+
+<script>
+var btn = document.getElementById("sbmt");
+var meals = document.getElementById("meals");
+var chc = document.getElementById("choices");
+
+btn.onclick = function() {
+  var s = 'Your meal choice: ';
+  s += meals.options[ meals.selectedIndex ].value;
+  chc.innerHTML = s;
+};
+</script>
+
+</body>
+</html>

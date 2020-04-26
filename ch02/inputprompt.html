@@ -1,0 +1,25 @@
+<!-- filename: inputprompt.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Input Prompt</title>
+</head>
+
+<body>
+
+<div id="answer"></div>
+
+<script>
+
+var obj = document.getElementById("answer");
+var radius = prompt("Enter the radius:");
+var area = Math.PI * (radius ** 2);
+
+obj.innerHTML = "The area is: " + area;
+
+</script>
+
+</body>
+
+</html>

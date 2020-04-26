@@ -1,0 +1,20 @@
+<!-- filename: datetime.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Date/Time</title></head>
+
+<body>
+<h3>The current date/time is:</h3>
+
+<div id="dte"> </div>
+
+<script>
+var today = new Date();
+var my_div = document.getElementById("dte");
+
+my_div.innerHTML = today.toString();
+</script>
+
+</body>
+
+</html>

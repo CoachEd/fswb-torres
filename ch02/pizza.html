@@ -1,0 +1,57 @@
+<!-- filename: pizza.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<title>Pizza</title>
+</head>
+<body>
+<h4>Select your pizza toppings</h4>
+
+<input type="checkbox" id="tp1" value="pepperoni">
+<label for="tp1">Pepperoni</label><br>
+
+<input type="checkbox" id="tp2" value="mushrooms">
+<label for="tp2">Mushrooms</label><br>
+
+<input type="checkbox" id="tp3" value="onions">
+<label for="tp3">Onions</label><br>
+
+<br><br>
+
+<div id="choices"></div>
+
+<button id="sbmt" type="button">Submit</button>
+
+<script>
+
+var btn = document.getElementById("sbmt");
+var t1 = document.getElementById("tp1");
+var t2 = document.getElementById("tp2");
+var t3 = document.getElementById("tp3");
+var chc = document.getElementById("choices");
+
+
+//define a function for when the button is clicked
+btn.onclick = function() {
+  var s = 'Your selections: ';
+
+  if (t1.checked == true) {
+    s = s + t1.value + ' ';
+  }
+
+  if (t2.checked == true) {
+    s = s + t2.value + ' ';
+  }
+
+  if (t3.checked == true) {
+    s = s + t3.value + ' ';
+  }
+
+  chc.innerHTML = s;
+};
+
+</script>
+
+</body>
+</html>

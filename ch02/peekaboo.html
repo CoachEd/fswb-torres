@@ -1,0 +1,27 @@
+<!-- filename: peekaboo.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Peek-a-Boo!</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+
+<button id="reset">Reset</button>
+<button id="pboo">Peek-a-Boo!</button>
+
+<p id="pab" style="font-size:50px;">Peek-a-Boo!</p>
+
+<script>
+$(document).ready(function(){
+  $("#reset").click(function(){
+    $("#pab").hide();
+  });
+  $("#pboo").click(function(){
+    $("#pab").show();
+  });
+});
+</script>
+
+</body>
+</html>
