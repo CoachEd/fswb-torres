@@ -1,0 +1,24 @@
+<!-- filename: estrings.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Escape Sequences</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var str1 = "\tTabbed\t\tover" + "\n";
+var str2 = "\"To be, or not to be...\"" + "\n";
+var str3 = "I can\'t get no satisfaction" + "\n";
+var str4 = "C:\\Windows" + "\n";
+var str5 = "\0" + "\n";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str1 + str2 + str3 + str4 + str5;
+</script>   
+
+</body>
+</html>

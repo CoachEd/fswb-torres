@@ -1,0 +1,26 @@
+<!-- filename: ahria.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Ahria</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+var obj = { "name":"Ahria" , "age":19 , "gold":88.32 , "status":true };
+
+var str = "";
+str += "Name: " + obj.name + "\n";
+str += "Age: " + obj.age + "\n";
+str += "Gold: " + obj.gold + "\n";
+str += "Alive: " + obj.status + "\n";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

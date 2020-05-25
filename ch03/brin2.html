@@ -1,0 +1,21 @@
+<!-- filename: brin.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Brin</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+var jstr = '{"name":"Brin","age":13,"gold":3.21,"alive":true}';
+var obj = JSON.parse(jstr);
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = "My name is " + obj.name;
+
+</script>   
+
+</body>
+</html>

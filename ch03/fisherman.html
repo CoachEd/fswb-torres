@@ -1,0 +1,28 @@
+<!-- filename: fisherman.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Fisherman</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var fish1 = 10.9;
+var fish2 = 38.6;
+var fish3 = 18.43;
+var average = ( fish1 + fish2 + fish3 ) / 3.0;
+
+var str = "Bluefish, " + fish1 + " lbs.\n";
+str = str + "Striped Bass, " + fish2 + " lbs.\n";
+str = str + "Weakfish, " + fish3 + " lbs.\n\n";
+str = str + "Average weight: " + average + " lbs.";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+</script>   
+
+</body>
+</html>

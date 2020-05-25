@@ -1,0 +1,26 @@
+<!-- filename: weather.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Weather</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var isRaining = false;
+var isSunny = true;
+var str = "";
+
+str += "Is it raining? " + isRaining + "\n";
+str += "Is it sunny? " + isSunny + "\n";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

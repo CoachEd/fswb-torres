@@ -1,0 +1,27 @@
+<!-- filename: nozeroes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>No Zeroes</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var nums = [0,1,2,0,3,5,0,0];
+
+nums.splice(0,1); //remove first 0
+nums.pop(); //remove last 0
+nums.pop(); //remove last 0
+nums.splice(2,1); //remove 0 at position 2
+nums.splice(3,0,4); //add 4 to position 3
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = nums.toString();
+
+</script>   
+
+</body>
+</html>

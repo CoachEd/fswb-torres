@@ -1,0 +1,37 @@
+<!-- filename: raincounter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rain Counter</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var rain = []; //daily rain amounts
+
+rain.push(0.0);
+rain.push(0.2);
+rain.push(1.1);
+rain.push(2.1);
+rain.push(0.4);
+rain.push(0.3);
+rain.push(0.1);
+
+var str = "";
+str += rain.length + " days:" + "\n";
+str += rain.toString() + "\n";
+
+rain.sort();
+
+str += "Sorted: " + rain.toString(); 
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

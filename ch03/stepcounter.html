@@ -1,0 +1,27 @@
+<!-- filename: stepcounter.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Step Counter</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var steps = [1100,1542,6500,8871,5439,4598,7643];
+
+steps[2] = 7500;
+
+var str = "";
+str += "Your steps on the first day: " + steps[0] + "\n";
+str += "Your steps on the last day: " + steps[6] + "\n";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

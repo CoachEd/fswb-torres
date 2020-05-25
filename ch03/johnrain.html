@@ -1,0 +1,27 @@
+<!-- filename: johnrain.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>John Rain</title>
+</head>
+<body>
+
+<pre id="mypre"></pre>
+
+<script>
+
+var player = ["John Rain",25,124.40,true];
+
+var str = "";
+str += "Name: " + player[0] + "\n";
+str += "Age: " + player[1] + "\n";
+str += "Gold: " + player[2] + "\n";
+str += "Alive: " + player[3] + "\n";
+
+var my_pre = document.getElementById("mypre");
+my_pre.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
