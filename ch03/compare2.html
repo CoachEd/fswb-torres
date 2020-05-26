@@ -1,0 +1,40 @@
+<!-- filename: compare2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Dare to Compare Some More</title>
+</head>
+<body>
+
+<script>
+var a = 5;
+var b = 6;
+var c = 5.0;
+var d = 6.0;
+
+var result;
+
+//equality
+result = ( a == 5 );
+console.log(result);   //true
+
+result = ( a == 5.0 ); 
+console.log(result);   //true
+
+result = ( a == "5.0" ); 
+console.log(result);   //true
+
+//strict equality
+result = ( a === 5 );
+console.log(result);   //true
+
+result = ( a === 5.0 ); 
+console.log(result);   //true
+
+result = ( a === "5.0" ); 
+console.log(result);   //false
+
+</script>   
+
+</body>
+</html>

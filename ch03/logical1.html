@@ -1,0 +1,30 @@
+<!-- filename: logical1.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>This is Logical</title>
+</head>
+<body>
+
+<script>
+var a = true;
+var b = false;
+var c = true;
+
+var result;
+
+result = (a && b);     //false
+result = (a || b);     //true
+result = !b ;          //true
+result = (a && c);     //true
+result = (a || c);     //true
+result = (b || false); //false
+
+var x = 1.0;
+var y = 2.0;
+var z = 3.0;
+result = ( x < y ) && ( y > z ) ; //false
+</script>   
+
+</body>
+</html>
