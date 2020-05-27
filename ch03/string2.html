@@ -1,0 +1,35 @@
+<!-- filename: string2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>More String Fun</title>
+</head>
+<body>
+
+<script>
+
+var str = "Purple rein, purple rein";
+
+console.log( str.charAt(1) ); //u
+console.log( str.startsWith("Purple") ); //true
+console.log( str.endsWith("snow") ); //false
+console.log( str.includes("purple") ); //true
+console.log( str.indexOf("rein") ); //7
+console.log( str.lastIndexOf("rein") ); //20
+console.log( str.repeat(2) ); //Purple rein, purple reinPurple rein, purple rein
+console.log( str.replace("rein","rain") ); //Purple rain, purple rein
+console.log( str.slice(0,6) ); //Purple
+console.log( str.substr(7,4) ); //rein
+console.log( str.toUpperCase() ); //PURPLE REIN, PURPLE REIN
+console.log( str.toLowerCase() ); //purple rein, purple rein
+console.log( str.split(" ") ); //["Purple", "rein,", "purple", "rein"]
+
+str = " I only wanted to see you    ";
+console.log( ">" + str.trim() + "<"); //>I only wanted to see you<
+
+var num = 99.123;
+console.log( num.toString() ); //99.123
+</script>   
+
+</body>
+</html>
