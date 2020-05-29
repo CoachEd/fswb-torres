@@ -1,0 +1,30 @@
+<!-- filename: grades.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head><title>Grades</title></head>
+<body>
+
+<script>
+
+var grade = prompt("What grade did you earn (A,B,C,...)?");
+
+grade = grade.toUpperCase();
+
+switch(grade) {
+  case 'A':
+    console.log("Super!");
+    break;
+  case 'B':
+    console.log("Good.");
+    break;
+  case 'C':
+    console.log("Not bad.");
+    break;
+  default:
+    console.log("Try harder.");
+}
+
+</script> 
+
+</body>
+</html>
