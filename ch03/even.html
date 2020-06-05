@@ -1,0 +1,27 @@
+<!-- filename: even.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Even Steven</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var str = "";
+
+for (var i=0; i < 100; i++) {
+  if ( i % 2 == 0) {
+    str += i + " ";
+  }
+}
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
