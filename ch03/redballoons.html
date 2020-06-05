@@ -1,0 +1,25 @@
+<!-- filename: redballoons.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Red Balloons</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var str = "";
+
+for (var i=1; i <= 99; i++) {
+  str += "&#127880";
+}
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
