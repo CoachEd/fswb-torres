@@ -1,0 +1,26 @@
+<!-- filename: student.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Student</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var str = "";
+var student = {"first":"Alice", "last":"Jones", "age":25, "gpa":3.99, "enrolled":true};
+
+for (x in student) {
+  str += x + " , " + student[x] + "<br>";
+}
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- filename: abc.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>ABC</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+var my_div = document.getElementById("mydiv");
+var str = "abcdefghijklmnopqrstuvwxyz";
+var str2 = "";
+
+for (c of str) {
+  str2 = c + str2;
+}
+
+my_div.innerHTML = str2;
+</script>
+
+</body>
+</html>
