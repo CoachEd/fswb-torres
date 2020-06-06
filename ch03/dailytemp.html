@@ -1,0 +1,32 @@
+<!-- filename: dailytemp.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Daily Temperatures</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var temps = [ 80.4, 81.3, 84.5, 88.9, 90.1, 92.6, 89.9 ];
+var total = 0.0;
+var str = "";
+
+for (var i=0; i < temps.length; i++) {
+  total = total + temps[i];
+  str = str + temps[i] + " ";
+}
+
+var avg = total / temps.length;
+
+str = str + "<br>" + "Average: " + avg;
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
