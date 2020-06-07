@@ -1,0 +1,32 @@
+<!-- filename: craps.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Craps</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var str = "";
+var num = 0;
+var roll = 0;
+
+while (num !== 7 && num !== 11) {
+  roll++;
+
+  num = Math.floor( Math.random() * 6 ) + 1; //dice 1
+  num += Math.floor( Math.random() * 6 ) + 1; //dice 2
+
+  str += "Roll " + roll + ": " + num + "<br>";
+}
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
