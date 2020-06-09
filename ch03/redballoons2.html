@@ -1,0 +1,27 @@
+<!-- filename: redballoons2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Red Balloons 2</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var str = "";
+
+var i=1;
+while (i <= 99) {
+  str += "&#127880";
+  i++;
+}
+
+var my_div = document.getElementById("mydiv");
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

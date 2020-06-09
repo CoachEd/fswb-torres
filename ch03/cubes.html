@@ -1,0 +1,30 @@
+<!-- filename: cubes.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Cubes</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var my_div = document.getElementById("mydiv");
+var str = "";
+var i = 0;
+var cube = 0;
+
+cube = Math.pow(i,3);
+while (cube < 1000000) {
+  str += cube + " ";
+  i++;
+  cube = Math.pow(i,3);
+}
+
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
