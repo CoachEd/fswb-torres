@@ -1,0 +1,32 @@
+<!-- filename: rainsum.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rain Sum</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var my_div = document.getElementById("mydiv");
+var total = 0.0;
+var str = "";
+var rain = [0.0 , -4.0, 0.2 , 1.1, 1.2, -3.0, 1.5, 2.5, 1.0, -9.0, 0.0]; //daily rain amounts
+
+for (i=0; i < rain.length; i++) {
+  if (rain[i] < 0) {
+   continue;
+  }
+  str = str + rain[i] + " ";
+  total = total + rain[i];
+}
+
+str += "<br>" + "Total: " + total;
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>

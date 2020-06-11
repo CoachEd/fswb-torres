@@ -1,0 +1,29 @@
+<!-- filename: rainvalidate.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rain Validate</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+var my_div = document.getElementById("mydiv");
+var str = "rain amounts are valid";
+var rain = [0.0 , 0.2 , 1.1, 1.2, -3.0, 1.5, 2.5, 1.0, 0.0]; //daily rain amounts
+
+for (i=0; i < rain.length; i++) {
+  if (rain[i] < 0) {
+    str = "invalid rain amount at position: " + i;
+    break;
+  }
+}
+
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
