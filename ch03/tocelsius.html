@@ -1,0 +1,32 @@
+<!-- filename: tocelsius.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>To Celsius</title>
+</head>
+<body>
+
+<div id="mydiv"></div>
+
+<script>
+
+function toCelsius(fahr) {
+  var cels = 5.0/9.0 * (fahr - 32.0); //known formula
+  return cels;
+}
+
+var my_div = document.getElementById("mydiv");
+
+var str = "";
+str += toCelsius(0) + " ";
+str += toCelsius(55.5) + " "; 
+str += toCelsius(87.3) + " "; 
+str += toCelsius(98.6) + " "; 
+str += toCelsius(32.0) + " "; 
+
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
