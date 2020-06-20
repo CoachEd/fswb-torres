@@ -1,0 +1,23 @@
+<!-- filename: hi2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Hi 2</title>
+</head>
+<body>
+
+<div style="font-size:200px" id="mydiv"></div>
+
+<script>
+
+function sayHi(str,id) {
+  var my_div = document.getElementById(id);
+  my_div.innerHTML = str;
+}
+
+setTimeout( sayHi , 10000 , 'Hi', 'mydiv');
+
+</script>   
+
+</body>
+</html>

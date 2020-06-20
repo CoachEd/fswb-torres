@@ -1,0 +1,34 @@
+<!-- filename: square.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Square</title>
+</head>
+<body>
+
+<pre id="mypre1"></pre><br>
+<pre id="mypre2"></pre><br>
+<pre id="mypre3"></pre>
+
+<script>
+
+function drawSquare(id,size) {
+  var my_pre = document.getElementById(id);
+  var str = '';
+  for (var i=0; i < size; i++) {
+    for (var j=0; j < size; j++) {
+      str += '* ';
+    }
+    str += '\n';
+  }
+  my_pre.innerHTML = str;
+}
+
+drawSquare('mypre1',4);
+drawSquare('mypre2',8);
+drawSquare('mypre3',16);
+
+</script>   
+
+</body>
+</html>

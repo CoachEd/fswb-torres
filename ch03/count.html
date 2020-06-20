@@ -1,0 +1,25 @@
+<!-- filename: count.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Count</title>
+</head>
+<body>
+
+<div style="font-size:200px" id="mydiv"></div>
+
+<script>
+var count = 0;
+
+function updateCount() {
+  var my_div = document.getElementById('mydiv');
+  count++;
+  my_div.innerHTML = count;
+}
+
+var interval_id = setInterval( updateCount , 1000 );
+
+</script>   
+
+</body>
+</html>
