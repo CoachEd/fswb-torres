@@ -1,0 +1,33 @@
+<!-- filename: date2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Date 2</title>
+</head>
+<body>
+
+<div style="font-size:20px" id="mydiv"></div>
+
+<script>
+
+var str = '';
+var my_div = document.getElementById('mydiv');
+
+var obj = new Date();
+
+str += obj.toString() + "<br>";
+str += obj.getDay() + "<br>";
+str += obj.getMonth() + "<br>";
+str += obj.getFullYear() + "<br>";
+str += obj.getHours() + "<br>";
+str += obj.getTime() + "<br>";
+
+obj.setHours(11);
+str += obj.getHours() + "<br>";
+
+my_div.innerHTML = str;
+
+</script>   
+
+</body>
+</html>
