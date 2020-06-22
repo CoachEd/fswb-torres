@@ -1,0 +1,45 @@
+<!-- filename: smiley.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Smiley</title>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+
+//get the canvas element
+var c = document.getElementById("myCanvas");
+
+//get a 2D graphics context from the canvas element  
+var ctx = c.getContext("2d");
+
+//draw a filled yellow circle
+ctx.beginPath();
+ctx.arc(150, 75, 75, 0, 2 * Math.PI); //x, y, radius, start angle, end angle
+ctx.fillStyle = "yellow";
+ctx.fill();
+
+//draw the left eye
+ctx.beginPath();
+ctx.arc(125, 55, 10, 0, 2 * Math.PI);
+ctx.fillStyle = "black";
+ctx.fill();
+
+//draw the right eye
+ctx.beginPath();
+ctx.arc(175, 55, 10, 0, 2 * Math.PI);
+ctx.fill();
+
+//draw the mouth
+ctx.beginPath();
+ctx.arc(150, 85, 40, 0,  Math.PI);
+ctx.stroke();
+
+</script> 
+
+</body>
+</html>
