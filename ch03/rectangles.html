@@ -1,0 +1,31 @@
+<!-- filename: rectangles.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Rectangles</title>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+
+//get the canvas element
+var c = document.getElementById("myCanvas");
+
+//get a 2D graphics context from the canvas element  
+var ctx = c.getContext("2d");
+
+//draw a blue square
+ctx.fillStyle = "blue";
+ctx.fillRect(100, 25, 50, 50);  //params: x,y,width,height
+
+//draw a green rectangle
+ctx.fillStyle = "green";
+ctx.fillRect(400, 300, 100, 25);  //params: x,y,width,height
+
+</script> 
+
+</body>
+</html>

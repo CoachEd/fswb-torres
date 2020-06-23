@@ -1,0 +1,35 @@
+<!-- filename: imagine.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Imagine</title>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="600" height="400"></canvas>
+
+<script>
+
+//get the canvas element
+var c = document.getElementById("myCanvas");
+
+//get a 2D graphics context from the canvas element  
+var ctx = c.getContext("2d");
+
+//color the canvas lightgrey
+ctx.fillStyle = "black";
+ctx.fillRect(0, 0, c.width, c.height);    
+
+ctx.font = "100px Arial"; //font size type
+
+ctx.fillStyle = "gray"; //font color
+ctx.fillText("IMAGINE", 70, 100);  //text , x, y
+
+ctx.strokeStyle = "gray";
+ctx.strokeText("IMAGINE", 100, 190);  //text , x, y
+
+</script> 
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!-- filename: thinredline.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Thin Red Line</title>
+</head>
+
+<body>
+
+<canvas id="myCanvas" width="600" height="400" style="border:1px solid black;"></canvas>
+
+<script>
+
+//get the canvas element
+var c = document.getElementById("myCanvas");
+
+//get a 2D graphics context from the canvas element  
+var ctx = c.getContext("2d");
+
+ctx.lineWidth = 1;
+ctx.strokeStyle = "red";
+
+ctx.moveTo(50,50);
+ctx.lineTo(200,50);
+ctx.stroke();
+
+</script> 
+
+</body>
+</html>
