@@ -9,8 +9,10 @@ console.log('after writeFile');
 
 function imDone(err) {
   if(err) {
+    //error block
     console.log(err);
   } else {
+    //success
     console.log("File created successfully!");
   }
 }
