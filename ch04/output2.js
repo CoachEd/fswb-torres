@@ -12,7 +12,7 @@ function imDone(err) {
     //error block
     console.log(err);
   } else {
-    //success
+    //success block
     console.log("File created successfully!");
   }
 }
