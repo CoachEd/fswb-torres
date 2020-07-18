@@ -5,6 +5,8 @@ const app = express()
 const bodyParser = require('body-parser');
 
 app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.static('./public'));
 
 var bluevotes = 0;
 var redvotes = 0;
@@ -59,6 +61,36 @@ app.get('/getVote', function(req, res) {
     str = "Red: " + redvotes + "\n";
   }
   res.status(200).send(str);
+  return;
+});
+
+app.put('/updateVotes',function(req, res) {
+  bluevotes = req.body.bluevotes;
+  redvotes = req.body.redvotes;
+  res.status(200).send({"msg":"update successful"});
+  return;
+});
+
+app.delete('/deleteVote',function(req, res) {
+  var name = req.body.name;
+  var vote = req.body.vote;
+
+  switch(vote) {
+
+    case "blue":
+      bluevotes--;
+      break;
+
+    case "red":
+      redvotes--;
+      break;
+
+    default:
+      res.status(200).send('error - invalid vote: ' + vote + '\n');
+      return;
+
+  }
+  res.status(200).send(name + ', vote deleted.\n');
   return;
 });
 
