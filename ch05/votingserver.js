@@ -71,26 +71,10 @@ app.put('/updateVotes',function(req, res) {
   return;
 });
 
-app.delete('/deleteVote',function(req, res) {
-  var name = req.body.name;
-  var vote = req.body.vote;
-
-  switch(vote) {
-
-    case "blue":
-      bluevotes--;
-      break;
-
-    case "red":
-      redvotes--;
-      break;
-
-    default:
-      res.status(200).send('error - invalid vote: ' + vote + '\n');
-      return;
-
-  }
-  res.status(200).send(name + ', vote deleted.\n');
+app.delete('/deleteVotes',function(req, res) {
+  bluevotes = 0;
+  redvotes = 0;
+  res.status(200).send('Votes deleted.\n');
   return;
 });
 
