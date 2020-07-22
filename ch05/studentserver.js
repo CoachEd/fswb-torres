@@ -52,31 +52,37 @@ app.get('/students/:record_id', function(req, res) {
   });
 }); 
 
+function readFiles(files,arr,res) {
+  fname = files.pop();
+  if (!fname)
+    return;
+  fs.readFile(fname, "utf8", function(err, data) {
+    if (err) {
+      return res.status(500).send({"message":"error - internal server error"});
+    } else {
+      arr.push(JSON.parse(data));
+      if (files.length == 0) {
+        var obj = {};
+        obj.students = arr;
+        return res.status(200).send(obj);
+      } else {
+        readFiles(files,arr,res);
+      }
+    }
+  });  
+}
+
 app.get('/students', function(req, res) {
   var obj = {};
   var arr = [];
   filesread = 0;
 
   glob("students/*.json", null, function (err, files) {
-    
     if (err) {
       return res.status(500).send({"message":"error - internal server error"});
     }
-
-    for (var fname of files) {
-      fs.readFile(fname, "utf8", function(err, data) {
-        if (!err) {
-          arr.push(JSON.parse(data));
-          filesread++;
-          if (filesread == files.length) {
-            obj.students = arr;
-            return res.status(200).send(obj);
-          }
-        }
-      });
-    }
-
-  })
+    readFiles(files,[],res);
+  });
 
 });
 
