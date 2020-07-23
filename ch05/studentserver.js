@@ -86,6 +86,66 @@ app.get('/students', function(req, res) {
 
 });
 
+app.put('/students/:record_id', function(req, res) {
+  var record_id = req.params.record_id;
+  var fname = "students/" + record_id + ".json";
+  var rsp_obj = {};
+  var obj = {};
+
+  obj.record_id = record_id;
+  obj.first_name = req.body.first_name;
+  obj.last_name = req.body.last_name;
+  obj.gpa = req.body.gpa;
+  obj.enrolled = req.body.enrolled;
+
+  var str = JSON.stringify(obj, null, 2);
+
+  //check if file exists
+  fs.stat(fname, function(err) {
+    if(err == null) {
+
+      //file exists
+      fs.writeFile("students/" + record_id + ".json", str, function(err) {
+        var rsp_obj = {};
+        if(err) {
+          rsp_obj.record_id = record_id;
+          rsp_obj.message = 'error - unable to update resource';
+          return res.status(200).send(rsp_obj);
+        } else {
+          rsp_obj.record_id = record_id;
+          rsp_obj.message = 'successfully updated';
+          return res.status(201).send(rsp_obj);
+        }
+      });
+      
+    } else {
+      rsp_obj.record_id = record_id;
+      rsp_obj.message = 'error - resource not found';
+      return res.status(404).send(rsp_obj);
+    }
+
+  });
+
+}); //end put method
+
+app.delete('/students/:record_id', function(req, res) {
+  var record_id = req.params.record_id;
+  var fname = "students/" + record_id + ".json";
+
+  fs.unlink(fname, function(err) {
+    var rsp_obj = {};
+    if (err) {
+      rsp_obj.record_id = record_id;
+      rsp_obj.message = 'error - resource not found';
+      return res.status(404).send(rsp_obj);
+    } else {
+      rsp_obj.record_id = record_id;
+      rsp_obj.message = 'record deleted';
+      return res.status(200).send(rsp_obj);
+    }
+  });
+
+}); //end delete method
 
 app.listen(5678); //start the server
 console.log('Server is running...');
