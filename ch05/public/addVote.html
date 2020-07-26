@@ -1,0 +1,44 @@
+<!-- filename: addVote.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Vote</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <label for="name">Name:</label>
+  <input type="text" id="name" name="name"><br><br>
+
+  <label for="vote">Vote:</label>
+  <input type="text" id="vote" name="vote"><br><br>
+
+  <button onclick="sendVote()">Submit</button>
+  <br>
+  <br>
+  <div id="mydiv" name="mydiv"></div>
+  <script>
+
+    function sendVote() {
+      var name_val = $("#name").val();
+      var vote_val = $("#vote").val();
+      $.ajax({
+        url: "http://localhost:5678/addVote",
+        type: "post",
+        data: { 
+          name: name_val,
+          vote: vote_val 
+        },
+        success: function(response) {
+          $("#mydiv").text(response);
+        },
+        error: function(xhr) {
+          $("#mydiv").text('error: ' + xhr);
+        }
+      });
+    }
+    
+  </script>
+
+</body>
+</html>

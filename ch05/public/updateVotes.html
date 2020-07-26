@@ -1,0 +1,44 @@
+<!-- filename: updateVotes.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Update Votes</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <label for="blue">blue:</label>
+  <input type="text" id="blue" name="blue"><br><br>
+
+  <label for="vote">red:</label>
+  <input type="text" id="red" name="red"><br><br>
+
+  <button onclick="updateVotes()">Update Votes</button>
+  <br>
+  <br>
+  <div id="mydiv" name="mydiv"></div>
+  <script>
+
+    function updateVotes() {
+      var blue_val = $("#blue").val();
+      var red_val = $("#red").val();
+      $.ajax({
+        url: "http://localhost:5678/updateVotes",
+        type: "put",
+        data: { 
+          bluevotes: blue_val,
+          redvotes: red_val 
+        },
+        success: function(response) {
+          $("#mydiv").text(response.msg);
+        },
+        error: function(xhr) {
+          $("#mydiv").text('error: ' + xhr);
+        }
+      });
+    }
+    
+  </script>
+
+</body>
+</html>

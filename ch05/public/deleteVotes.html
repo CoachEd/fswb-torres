@@ -1,0 +1,32 @@
+<!-- filename: deleteVotes.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<title>Delete Votes</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+  <button onclick="deleteVotes()">Delete Votes</button>
+  <br>
+  <br>
+  <div id="mydiv" name="mydiv"></div>
+  <script>
+
+    function deleteVotes() {
+      $.ajax({
+        url: "http://localhost:5678/deleteVotes",
+        type: "delete",
+        success: function(response) {
+          $("#mydiv").text(response);
+        },
+        error: function(xhr) {
+          $("#mydiv").text('error: ' + xhr);
+        }
+      });
+    }
+    
+  </script>
+
+</body>
+</html>
