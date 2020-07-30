@@ -10,7 +10,7 @@ MongoClient.connect(uri, { useUnifiedTopology: true }, function(err, client) {
 
   db.dropDatabase(function(err, result) { 
     if(err) throw err;
-    console.log('deleted');
+    console.log(result);
     client.close(); 
   });
 
