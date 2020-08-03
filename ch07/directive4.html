@@ -1,0 +1,22 @@
+<!-- directive4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div data-ng-app="" data-ng-init="mycheckbox = false">
+
+    <label for="signup">Sign up for newsletter?</label>
+    <input type="checkbox" id="signup" name="signup" data-ng-model="mycheckbox"><br><br>
+    
+    Signup Value: <pre data-ng-bind="mycheckbox"></pre>
+
+  </div>
+
+</body>
+
+</html>
