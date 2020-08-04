@@ -1,0 +1,43 @@
+<!-- module4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+
+    <p>Color: <input type="text" data-ng-model="myColor" data-ng-change="redraw()" ></p>
+    <p>Radius: <input type="number" data-ng-model="myRadius" data-ng-change="redraw()" ></p>
+
+    <canvas id="myCanvas" width="1000" height="1000" style="border:0px;"></canvas>
+
+  </div> 
+
+  <script>
+  var canvas = document.getElementById("myCanvas");
+  var ctx = canvas.getContext("2d");    
+
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope) {
+      $scope.myColor = 'blue';
+      $scope.myRadius = 20;
+      $scope.redraw = function() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.beginPath();
+        ctx.arc($scope.myRadius,$scope.myRadius,$scope.myRadius, 0, 2 * Math.PI);
+        ctx.closePath();
+        ctx.fillStyle = $scope.myColor;
+        ctx.fill();
+      };
+      
+      $scope.redraw(); //call it manually the first time
+  });
+
+  </script>
+
+</body>
+</html>
