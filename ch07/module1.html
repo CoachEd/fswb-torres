@@ -1,4 +1,4 @@
-<!-- expression1.html -->
+<!-- module1.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,13 +8,13 @@
 
 <body>
 
-  <div data-ng-app="">
+  <div data-ng-app="firstapp">
+  Hello World!
+  </div> 
 
-    <div>{{ 2 + 2 }}</div>
-    <div>{{ 5 * 1 }}</div>
-    <div>{{ 36 / 6 }}</div>
-
-  </div>
+  <script>
+  var app = angular.module("firstapp", []);
+  </script>
 
 </body>
 

@@ -1,0 +1,23 @@
+<!-- expression3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+
+<body>
+
+  <div data-ng-app="" data-ng-init="fontsize=24; fontcolor='black'">
+    
+    Font size: <input type="text" data-ng-model="fontsize"><br>
+    <br>
+    Font color: <input type="text" data-ng-model="fontcolor"><br>  
+
+    <div style="color:{{fontcolor}};font-size:{{fontsize}}px">Imagine a dragon.<div>
+
+  </div>
+
+</body>
+
+</html>

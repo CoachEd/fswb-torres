@@ -1,0 +1,38 @@
+<!-- module2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+
+    <div>a = {{a}}</div>
+    <div>b = {{b}}</div>
+    <div>c = {{c}}</div>
+    <div>d = {{d}}</div>
+
+    <p>a ^ b? {{ Math.pow(a,b) }} </p>
+    <p>Maximum of a and b? {{ Math.max(a,b) }}</p>
+    <p>Square root of c? {{ Math.sqrt(c) }}</p>
+    <p>Absolute value of d? {{ Math.abs(d) }}</p>
+
+  </div> 
+
+  <script>
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope) {
+    $scope.a = 2;
+    $scope.b = 3;
+    $scope.c = 16;
+    $scope.d = -4;
+    $scope.Math = window.Math;
+  });
+
+  </script>
+
+</body>
+</html>
