@@ -1,0 +1,46 @@
+<!-- repeat3.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+  }
+  </style>  
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+
+    <table>
+      <tr>
+        <th>Fruit</th>
+        <th>Quantity</th>
+      </tr>
+      <tr data-ng-repeat="obj in fruits">
+        <td>{{ obj.fruit }}</td>
+        <td>{{ obj.quantity }}</td>
+      </tr>
+    </table>
+
+  </div> 
+
+  <script>
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope) {
+      $scope.fruits = [
+        {"fruit":"apples", "quantity":10},
+        {"fruit":"oranges", "quantity":14},
+        {"fruit":"strawberries", "quantity":8},
+        {"fruit":"pears", "quantity":15},
+        {"fruit":"peaches", "quantity":22}
+      ];
+  });
+
+  </script>
+
+</body>
+</html>
