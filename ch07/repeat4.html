@@ -1,0 +1,40 @@
+<!-- repeat4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+
+    <label for="cars">Pizza type:</label>
+
+    <select name="pizzachoice" id="pizzachoice">
+      <option data-ng-repeat="obj in pizzas" value={{obj.val}}>{{obj.description}}</option>
+    </select>
+
+  </div> 
+
+  <script>
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope) {
+      $scope.pizzas = [
+        {"val":"plain", "description":"Plain"},
+        {"val":"sicilian", "description":"Sicilian"},
+        {"val":"white", "description":"White"},
+        {"val":"marinara", "description":"Marinara"},
+        {"val":"neapolitan", "description":"Neapolitan"},
+        {"val":"newyork", "description":"New York"},
+        {"val":"chicago", "description":"Chicago"},
+        {"val":"california", "description":"California"},
+        {"val":"greek", "description":"Greek"}
+      ];
+  });
+
+  </script>
+
+</body>
+</html>
