@@ -1,0 +1,38 @@
+<!-- http2.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+    <button data-ng-click="get_visits()">Get Visits</button>
+    <h1>{{get_visits_response}}</h1>
+  </div> 
+
+  <script>
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope, $http) {
+    
+    $scope.get_visits_response = '';
+
+    $scope.get_visits = function() {
+      $http({
+        method : "GET",
+        url : "http://localhost:5678/getVisits"
+      }).then(function(response) {
+        $scope.get_visits_response = response.data;
+      }, function(response) {
+        $scope.get_visits_response = 'Error!';
+      });
+    };
+
+  });
+
+  </script>
+
+</body>
+</html>

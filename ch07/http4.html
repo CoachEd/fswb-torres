@@ -1,0 +1,59 @@
+<!-- http4.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>AngularJS</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body>
+
+  <div data-ng-app="myapp" data-ng-controller="myctrl">
+
+    Your name: <input type="text" data-ng-model="yourname"><br>  
+
+    <button data-ng-click="get_visits()">Get Visits</button>
+    <h1>{{get_visits_response}}</h1>
+
+    <button data-ng-click="visit()">Visit</button>
+    <h1>{{visit_response}}</h1>
+  </div> 
+
+  <script>
+  var app = angular.module("myapp", []);
+
+  app.controller('myctrl', function ($scope, $http) {
+    
+    $scope.yourname = '<your name>';
+    $scope.get_visits_response = '';
+    $scope.visit_response = '';
+
+    $scope.get_visits = function() {
+      $http({
+        method : "GET",
+        url : "http://localhost:5678/getVisits",
+        params: {"your_name": $scope.yourname}
+      }).then(function(response) {
+        $scope.get_visits_response = response.data;
+      }, function(response) {
+        $scope.get_visits_response = 'Error!';
+      });
+    };
+
+    $scope.visit = function() {
+      $http({
+        method : "POST",
+        url : "http://localhost:5678/visit",
+        data: { "your_name" : $scope.yourname }
+      }).then(function(response) {
+        $scope.visit_response = response.data;
+      }, function(response) {
+        $scope.visit_response = 'Error!';
+      });
+    };
+
+  });
+
+  </script>
+
+</body>
+</html>
