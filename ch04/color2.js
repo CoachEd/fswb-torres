@@ -12,7 +12,7 @@ var bgcolors = [
   '\x1b[46m', '\x1b[106m', '\x1b[40m', '\x1b[100m','\x1b[107m'
 ];
 
-//cycle through foregrorund colors in the output
+//cycle through foreground colors in the output
 for (var i=0; i < fgcolors.length; i++) {
   process.stdout.write(fgcolors[i]); //set fg color
   console.log('*****' + '\x1b[0m');
