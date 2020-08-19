@@ -11,7 +11,9 @@ app.use(express.static('./public'));
 app.get('/buttons', function(req, res) {
   res.set('Content-Type', 'text/html');  //sending HTML back
 
-  var sHTML = '<!DOCTYPE html><html lang="en"><head><title>Buttons</title></head><body>';
+  var sHTML = '<!DOCTYPE html><html lang="en"><head>';
+  sHTML += '<title>Buttons</title></head><body>';
+  
   for (var i=0; i < 100; i++) {
     sHTML += '<button type="button">' + i + '</button>&nbsp;';
   }
